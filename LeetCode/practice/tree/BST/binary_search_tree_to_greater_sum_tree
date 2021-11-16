@@ -1,0 +1,15 @@
+# 1038
+
+# BST를 크기순으로 순회하고자 할때. 오른쪽노드부터 중위순회 or 왼쪽 노드부터 중위순회하면 크기순으로 조회가 가능하다.
+
+class Solution:
+    val:int=0
+    def bstToGst(self, root: TreeNode) -> TreeNode:
+        # 중위 순회 노드 값 누적
+        if root:
+            self.bstToGst(root.right)
+            self.val+=root.val
+            root.val=self.val
+            self.bstToGst(root.left)
+            
+        return root
