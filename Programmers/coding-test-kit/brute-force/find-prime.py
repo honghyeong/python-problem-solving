@@ -6,9 +6,8 @@ def solution(numbers):
     permute = set()
     # 가능한 문자열 순열을 permute에 추가
     for i in range(1, len(numbers) + 1):
-        permute.update(list(map(''.join, itertools.permutations(list(numbers), i))))
+        permute|=set(map(int,map(''.join, itertools.permutations(list(numbers), i))))
         # int로 변경했을때 겹치는 값 제거
-    permute = set(map(int, permute))
 
     # 소수 체크 함수
     def is_prime(number):
