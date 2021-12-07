@@ -1,5 +1,4 @@
 def solution(bridge_length, weight, truck_weights):
-    truck_weights=sorted(truck_weights)
     exit=len(truck_weights)
     # print('truck_weights:',truck_weights)
     passed=[]
